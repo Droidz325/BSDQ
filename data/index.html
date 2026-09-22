@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="브롤스타즈 x 듀오링고 콜라보 모드 퀴즈 정답 정리 사이트" />
+    <title>BS Duo Quiz Answer</title>
+    <style>
+      :root { color-scheme: dark; --ink:#f8fbff; --muted:#9fb0ca; --bg:#090d19; --panel:#121a2d; --line:#263451; --accent:#68e1ff; --accent2:#9c7bff; --good:#6df0af; --warm:#ffca70; }
+      * { box-sizing:border-box; }
+      body { margin:0; min-width:320px; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Noto Sans KR", sans-serif; color:var(--ink); background:radial-gradient(900px 500px at 10% -5%,#25385d 0%,transparent 60%),radial-gradient(700px 460px at 100% 20%,#2e2054 0%,transparent 58%),var(--bg); }
+      .shell { width:min(1120px, calc(100% - 32px)); margin:0 auto; padding:48px 0 64px; }
+      header { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:32px; }
+      .eyebrow { color:var(--accent); font-weight:800; letter-spacing:.12em; font-size:.74rem; margin:0 0 9px; }
+      h1 { font-size:clamp(2rem,5vw,3.6rem); letter-spacing:-.055em; line-height:1.02; margin:0; }
+      .intro { margin:14px 0 0; color:var(--muted); font-size:1rem; line-height:1.6; }
+      .total { flex:0 0 auto; border:1px solid var(--line); background:#10192b99; border-radius:14px; padding:13px 17px; color:var(--muted); text-align:right; font-size:.82rem; }
+      .total strong { display:block; color:var(--ink); font-size:1.5rem; line-height:1.1; }
+      .controls { display:grid; grid-template-columns:1fr auto; gap:12px; margin-bottom:18px; }
+      .search { display:flex; align-items:center; padding:0 15px; border:1px solid var(--line); border-radius:12px; background:#111a2d; min-height:52px; }
+      .search span { color:var(--accent); font-size:1.1rem; margin-right:9px; }
+      input { min-width:0; width:100%; border:0; outline:0; background:transparent; color:var(--ink); font:inherit; }
+      input::placeholder { color:#74829a; }
+      .filters { display:flex; flex-wrap:wrap; gap:8px; }
+      button { cursor:pointer; font:inherit; color:var(--muted); background:#121b2e; border:1px solid var(--line); border-radius:999px; padding:0 15px; min-height:40px; transition:.16s ease; }
+      button:hover { color:var(--ink); border-color:#6581b5; transform:translateY(-1px); }
+      button.active { color:#06131a; font-weight:800; background:var(--accent); border-color:var(--accent); }
+      .status { min-height:32px; color:var(--muted); font-size:.9rem; display:flex; align-items:center; }
+      .list { display:grid; gap:12px; }
+      .card { background:linear-gradient(125deg,#121b2f,#101728); border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:0 14px 35px #03061340; }
+      .card-top { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:13px; }
+      .code { color:var(--accent); font-weight:800; letter-spacing:.04em; font-size:.82rem; }
+      .difficulty { font-size:.74rem; padding:5px 9px; border-radius:999px; font-weight:800; background:#253755; color:#b9d9ff; }
+      .difficulty.medium { background:#493d26; color:#ffda8a; }.difficulty.difficult { background:#4a3052; color:#efb9ff; }
+      .question { margin:0 0 16px; font-size:1.14rem; font-weight:750; line-height:1.5; }
+      .answers { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+      .answer { min-height:74px; display:flex; flex-direction:column; justify-content:center; gap:5px; padding:10px 12px; border-radius:10px; color:var(--muted); background:#0c1322; border:1px solid #1d2b45; line-height:1.35; font-size:.9rem; }
+      .answer.correct { border-color:#3bb77d; background:linear-gradient(135deg,#103123,#10261e); color:#e6fff2; }
+      .answer small { color:var(--good); text-transform:uppercase; font-size:.67rem; font-weight:900; letter-spacing:.08em; }
+      .empty { padding:55px 20px; text-align:center; color:var(--muted); background:#101827aa; border:1px dashed var(--line); border-radius:16px; }
+      .pager { display:flex; justify-content:center; align-items:center; gap:12px; margin:26px 0 0; }.pager button { border-radius:10px; }.pager button:disabled { cursor:default; opacity:.35; transform:none; }
+      .pager span { color:var(--muted); font-size:.88rem; }
+      footer { margin-top:38px; padding-top:18px; border-top:1px solid #1d2a45; color:#71809a; font-size:.8rem; }
+      .discord-link { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding:9px 13px; color:#dfe4ff; background:#5865f2; border:1px solid #7380ff; border-radius:10px; font-size:.92rem; font-weight:800; text-decoration:none; transition:.16s ease; }
+      .discord-link:hover { color:white; background:#6b76ff; transform:translateY(-1px); }
+      .discord-link svg { width:18px; height:18px; fill:currentColor; }
+      @media (max-width:680px) { .shell { width:min(100% - 24px,1120px); padding-top:28px; } header { display:block; }.total { display:inline-block; margin-top:20px; text-align:left; }.controls { grid-template-columns:1fr; }.answers { grid-template-columns:1fr; }.card { padding:16px; } }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div><p class="eyebrow">QUIZ ANSWER ARCHIVE</p><h1>보스 퀴즈 정답 모음</h1><p class="intro">문제와 정답을 바로 찾아보세요. 정답은 초록색으로 표시됩니다.</p></div>
+        <div class="total"><strong id="total">—</strong>등록된 퀴즈</div>
+      </header>
+      <section class="controls" aria-label="퀴즈 찾기"><label class="search"><span>⌕</span><input id="query" type="search" placeholder="퀴즈 번호 또는 문제·정답 검색" autocomplete="off" /></label><div class="filters" role="group" aria-label="난이도 필터"><button class="active" data-filter="All">전체</button><button data-filter="Easy">쉬움</button><button data-filter="Medium">보통</button><button data-filter="Difficult">어려움</button></div></section>
+      <div class="status" id="status">퀴즈를 불러오는 중…</div>
+      <section class="list" id="list" aria-live="polite"></section>
+      <nav class="pager" id="pager" aria-label="페이지 이동"></nav>
+      <footer>
+        <a class="discord-link" href="https://discord.gg/krbrawl" aria-label="Join Discord!">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.54 4.3a15.4 15.4 0 0 0-3.83-1.18l-.47.95a14.1 14.1 0 0 0-6.48 0l-.47-.95A15.5 15.5 0 0 0 4.46 4.3C2.03 7.93 1.37 11.47 1.7 14.96a15.4 15.4 0 0 0 4.7 2.38l1.14-1.56a9.7 9.7 0 0 1-1.8-.86l.43-.33c3.47 1.6 7.24 1.6 10.67 0l.53.4c-.57.34-1.17.63-1.8.86l1.14 1.56a15.3 15.3 0 0 0 4.7-2.38c.4-4.04-.68-7.54-1.87-10.73ZM8.8 12.8c-1.04 0-1.89-.95-1.89-2.12s.83-2.12 1.89-2.12 1.9.95 1.89 2.12c0 1.17-.84 2.12-1.89 2.12Zm6.4 0c-1.04 0-1.89-.95-1.89-2.12s.83-2.12 1.89-2.12 1.9.95 1.89 2.12c0 1.17-.84 2.12-1.89 2.12Z"/></svg>
+          <span>Join Discord!</span>
+        </a>
+      </footer>
+    </main>
+    <script>
+      const pageSize=18; let all=[], filtered=[], page=1, filter='All';
+      const $=s=>document.querySelector(s); const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      function parseCSV(text){const rows=[];let row=[],cell='',quoted=false; for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'){if(quoted&&n==='"'){cell+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(cell);if(row.some(v=>v!==''))rows.push(row);row=[];cell=''}else cell+=c}row.push(cell);if(row.some(v=>v!==''))rows.push(row);return rows}
+      const csvObjects=text=>{const rows=parseCSV(text);const headers=rows[0];return rows.slice(2).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]||''])))};
+      const difficulty={Easy:'쉬움',Medium:'보통',Difficult:'어려움'};
+      function apply(){const q=$('#query').value.trim().toLowerCase();filtered=all.filter(x=>(filter==='All'||x.Difficulty===filter)&&(!q||[x.Name,x.question,...x.answers.map(a=>a.text)].join(' ').toLowerCase().includes(q)));page=1;render()}
+      function render(){const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);const rows=filtered.slice((page-1)*pageSize,page*pageSize);$('#status').textContent=`${filtered.length}개 결과 · ${filter==='All'?'전체 난이도':difficulty[filter]}`;$('#list').innerHTML=rows.length?rows.map(x=>`<article class="card"><div class="card-top"><span class="code">${esc(x.Name)}</span><span class="difficulty ${x.Difficulty.toLowerCase()}">${difficulty[x.Difficulty]}</span></div><p class="question">${esc(x.question)}</p><div class="answers">${x.answers.map(a=>`<div class="answer${a.correct?' correct':''}">${a.correct?'<small>정답</small>':''}<span>${esc(a.text)}</span></div>`).join('')}</div></article>`).join(''):'<div class="empty">조건에 맞는 퀴즈가 없습니다.</div>';$('#pager').innerHTML=pages>1?`<button id="prev" ${page===1?'disabled':''}>이전</button><span>${page} / ${pages} 페이지</span><button id="next" ${page===pages?'disabled':''}>다음</button>`:'';$('#prev')?.addEventListener('click',()=>{page--;render();scrollTo({top:0,behavior:'smooth'})});$('#next')?.addEventListener('click',()=>{page++;render();scrollTo({top:0,behavior:'smooth'})})}
+      async function init(){try{const [q,k]=await Promise.all(['data/boss_quiz.csv','data/kr.csv'].map(u=>fetch(u).then(r=>{if(!r.ok)throw Error();return r.text()})));const translations=Object.fromEntries(csvObjects(k).map(r=>[r.TID,r.KR]));all=csvObjects(q).map(r=>({ ...r, question:translations[r.PromptQuestion]||r.PromptQuestion, answers:[1,2,3].map(n=>({text:translations[r['Answer'+n]]||r['Answer'+n],correct:r['Answer'+n+'Correct']==='true'}))}));$('#total').textContent=all.length+'개';apply()}catch(e){$('#status').textContent='데이터를 불러오지 못했습니다.';$('#list').innerHTML='<div class="empty">잠시 후 다시 시도해주세요.</div>'}}
+      $('#query').addEventListener('input',apply);document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));apply()}));init();
+    </script>
+  </body>
+</html>
